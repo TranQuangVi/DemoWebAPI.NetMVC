@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.Book
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-sm-12 col=md-12">
+    <h2>@Html.DisplayFor(model => model.Title)</h2>
+
+    <div class="caption">
+        <p>@Html.DisplayNameFor(model => model.Author): @Html.DisplayFor(model => model.Author)</p>
+        <p>@Html.DisplayNameFor(model => model.Year): @Html.DisplayFor(model => model.Year)</p>
+        <p>@Html.DisplayNameFor(model => model.Price): @Html.DisplayFor(model => model.Price) VND</p>
+    </div>
+    <div class="thumbnail">
+        <img src="/@Html.DisplayFor(model=>model.Cover)" alt="thumbnail" width="185px" height="275px" />
+    </div>
+    <p>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+        <a href="@Url.Action("ListBook", "Book")" class="btn btn-primary">Back to List</a>
+
+
+    </p>
+
+
+</div>
